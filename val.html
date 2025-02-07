@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe6e6; /* Soft pink background */
+      color: #d9344f; /* Reddish text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    #yesButton {
+      background-color: #ff6f61; /* Bright red for "Yes" */
+      color: white;
+    }
+
+    #noButton {
+      background-color: #a6a6a6; /* Gray for "No" */
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .response {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+    <div id="response" class="response"></div>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const responseDiv = document.getElementById('response');
+
+    yesButton.addEventListener('click', () => {
+      responseDiv.textContent = "Yay! I'm so happy! ❤️";
+      responseDiv.style.color = '#ff6f61'; // Match the "Yes" button color
+      noButton.disabled = true; // Disable the "No" button after clicking "Yes"
+    });
+
+    noButton.addEventListener('click', () => {
+      responseDiv.textContent = "Oh no... Are you sure? 😢";
+      responseDiv.style.color = '#a6a6a6'; // Match the "No" button color
+      noButton.disabled = true; // Disable the "No" button after clicking
+    });
+  </script>
+</body>
+</html>
